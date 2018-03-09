@@ -8,12 +8,12 @@
 Or clone this repo
 - Install `app-root-path module`
 ```
-npm i -S app-root-path
+$ npm i -S app-root-path
 ```
 - Add your files to ```public``` directory 
 - Update `index.js` for file names and download commands
 - To run the server
 ```
-node index.js
+$ node index.js
 ```
 
