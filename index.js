@@ -4,8 +4,8 @@ var appRoot = require('app-root-path');
 
 let file1 = '/public/user1.bin';
 let file2 = '/public/user2.bin';
-let reqUser1 = '/simpaltek-iot/nxg-100-firmware/nxg100-2.0.5.user1.bin';
-let reqUser2 = '/simpaltek-iot/nxg-100-firmware/nxg100-2.0.5.user2.bin';
+let reqUser1 = '/sample1.bin';
+let reqUser2 = '/sample2.bin';
 
 function getFilesizeInBytes(filename) 
 {

@@ -1,5 +1,5 @@
 
-# Simple Express Node js Server
+# Simple Express Node.js Server
 
 ## How to use
 
