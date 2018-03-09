@@ -8,8 +8,8 @@
 Or clone this repo
 - Add your files to ```public``` directory 
 - Update `index.js` for file names and download commands
-- Run following command in bash
+- Run following command in bash to run the server
 ```
-node index.js to run the server
+node index.js
 ```
 
