@@ -10,6 +10,6 @@ Or clone this repo
 - Update `index.js` for file names and download commands
 - Run following command in bash
 ```
-node index.js
+node index.js to run the server
 ```
 
