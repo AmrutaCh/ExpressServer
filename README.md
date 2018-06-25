@@ -6,6 +6,7 @@
 - Install [Node.js](http://blog.teamtreehouse.com/install-node-js-npm-windows)
 - Install [Express](https://expressjs.com/en/starter/installing.html) and copy index.js from this repo to root directory
 Or clone this repo
+<<<<<<< HEAD
 - Install `app-root-path module` and `nodemon`
 ```sh
 $ npm i -S app-root-path
@@ -24,5 +25,16 @@ $ node index.js
 - auto-reload
 ```sh
 $ nodemon index.js     
+=======
+- Install `app-root-path module`
+```
+$ npm i -S app-root-path
+```
+- Add your files to ```public``` directory 
+- Update `index.js` for file names and download commands
+- To run the server
+```
+$ node index.js
+>>>>>>> origin/master
 ```
 
