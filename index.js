@@ -1,5 +1,6 @@
+
 let app = require('express')();
-const fs = require("fs"); 
+const fs = require("fs");
 var appRoot = require('app-root-path');
 
 let file1 = '/public/user1.bin';
@@ -7,14 +8,13 @@ let file2 = '/public/user2.bin';
 let reqUser1 = '/sample1.bin';
 let reqUser2 = '/sample2.bin';
 
-function getFilesizeInBytes(filename) 
+function getFilesizeInBytes(filename)
 {
     const stats = fs.statSync(filename)
-    const fileSizeInBytes = stats.size
-    return fileSizeInBytes
+    return stats.size
 }
 
-function resHead(res, file) 
+function resHead(res, file)
 {
     console.log('resHead');
     var filePath = appRoot + file;
@@ -23,14 +23,15 @@ function resHead(res, file)
     res.setHeader('Accept-Ranges','bytes');
     res.setHeader('Connection','close');
     res.status(200);
-    res.end(filePath, 'binary');             
+    // res.end(filePath, 'binary');
+    res.send(new Buffer(filePath, 'binary'));
 }
 
-function resGet(res, file) 
+function resGet(res, file)
 {
-    console.log('resGet');  
+    console.log('resGet');
     var filePath = appRoot + file;
-    var options = 
+    var options =
     {
 headers: {
             'Content-Type':'application/octet-stream',
@@ -41,29 +42,30 @@ headers: {
     };
 
     res.status(200);
-    res.sendFile(filePath,options);            
+    res.sendFile(filePath,options);
 }
 
-app.head(reqUser2, (req, res) => 
+
+app.head(reqUser2, (req, res) =>
 {
     console.log('Head '+reqUser2);
     resHead(res, file2);
 });
 
-app.get(reqUser2, (req, res) => 
-{    
+app.get(reqUser2, (req, res) =>
+{
     console.log('Get '+reqUser2);
     resGet(res, file2);
 });
 
-app.head(reqUser1, (req, res) => 
+app.head(reqUser1, (req, res) =>
 {
     console.log('Head '+reqUser1);
     resHead(res, file1);
 });
 
-app.get(reqUser1, (req, res) => 
-{   
+app.get(reqUser1, (req, res) =>
+{
     console.log('Get '+reqUser1);
     resGet(res, file1);
 });
